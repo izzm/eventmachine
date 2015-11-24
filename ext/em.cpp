@@ -1931,7 +1931,7 @@ const uintptr_t EventMachine_t::CreateUnixDomainServer (const char *filename)
 		goto fail;
 	}
 
-	if (listen (sd_accept, 100)) {
+	if (listen (sd_accept, 512)) {
 		//__warning ("listen failed");
 		goto fail;
 	}
