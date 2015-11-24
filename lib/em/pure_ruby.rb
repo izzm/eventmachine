@@ -843,7 +843,7 @@ module EventMachine
         sd = Socket.new( Socket::AF_LOCAL, Socket::SOCK_STREAM, 0 )
         sd.setsockopt( Socket::SOL_SOCKET, Socket::SO_REUSEADDR, true )
         sd.bind( Socket.pack_sockaddr_un( chain ))
-        sd.listen( 50 ) # 5 is what you see in all the books. Ain't enough.
+        sd.listen( 512 ) # 5 is what you see in all the books. Ain't enough.
         EvmaUNIXServer.new sd
       end
     end
